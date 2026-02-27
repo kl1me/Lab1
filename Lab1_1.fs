@@ -14,13 +14,12 @@ let ListInput =
     [x;y]
 
 let rec NaturalInput () =
-    printf "Введите количество повторений: "
-    let x = int(Console.ReadLine())
-    if (x<1) then
+    printf "Введите натуральное число: "
+    match System.Int32.TryParse(Console.ReadLine()) with
+    | (true, convertInt) when convertInt > 0 -> convertInt
+    | _ ->
         printfn "Ошибка: Ненатуральное число"
         NaturalInput ()
-    else
-        x
 
 let rec ListRepeat SummList OriginalList N =
     if (N=0) then
@@ -34,3 +33,4 @@ let main args =
     printfn "Список: %A" (ListRepeat [] ListInput (NaturalInput ()))
 
     0
+
