@@ -32,4 +32,5 @@ let rec ListRepeat SummList OriginalList N =
 [<EntryPoint>]
 let main args =
     printfn "Список: %A" (ListRepeat [] ListInput (NaturalInput ()))
+
     0
