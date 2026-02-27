@@ -31,4 +31,5 @@
 
 ### Тестирование
 
+<img width="377" height="245" alt="image" src="https://github.com/user-attachments/assets/bfb250fa-ca70-4b32-879c-597dc6e8d80a" />
 
