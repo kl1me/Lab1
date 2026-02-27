@@ -1,9 +1,12 @@
-﻿open System
+open System
 let rec CharInput () = 
     printf "Введите символ: "
     let x = Console.ReadLine()
     if ((String.length x)>1) then
         printfn "Ошибка: Введено больше одного символа!"
+        CharInput ()
+    else if ((String.length x)=0) then
+        printfn "Ошибка: Ничего не введено!"
         CharInput ()
     else
         x
@@ -14,7 +17,7 @@ let ListInput =
     [x;y]
 
 let rec NaturalInput () =
-    printf "Введите натуральное число: "
+    printf "Введите натуральное число повторений: "
     match System.Int32.TryParse(Console.ReadLine()) with
     | (true, convertInt) when convertInt > 0 -> convertInt
     | _ ->
@@ -33,4 +36,5 @@ let main args =
     printfn "Список: %A" (ListRepeat [] ListInput (NaturalInput ()))
 
     0
+
 
